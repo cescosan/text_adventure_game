@@ -5,17 +5,20 @@ from objects_ import *
 
 def attack(x,y):
     def attack_amount():
-        prob=random.randint(1,x.item[0].miss)
-        if prob != 0:
-            t=0
-            while t<2:
+        t=0
+        while t<2:
+            prob=random.randint(1,x.item[0].miss)
+            if prob != 0:
                 y.health-=(x.item[0].attack+random.randint(-x.item[0].attack_range,x.item[0].attack_range))
-                t+=x.item[0].recharge
-        else:
-            if x==player:
-                print('You missed.')
             else:
-                print(f'{x.name} missed.')
+                if x==player:
+                    print('You missed.')
+                else:
+                    print(f'{x.name} missed.')
+            t+=x.item[0].recharge
+
+
+
     if x is player:
         print(f'You attack {y.name}!')
         attack_amount()
