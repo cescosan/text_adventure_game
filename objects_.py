@@ -16,6 +16,8 @@ class Character:
         self.cash = cash
         self.inventory = inventory
         class_list.append(self)
+
+
         
 
 
@@ -41,6 +43,8 @@ class Armour:
         self.name = name
         self.protection = protection
         class_list.append(self)
+
+    # todo: need to add a method to update update armour stat of character when it receives armour
 
 
 
