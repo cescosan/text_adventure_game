@@ -36,6 +36,7 @@ def attack(x,y):
             y.health = 0
             print(f'Your health is now 0.')
 
+
 def shop_event():
     shop_inventory = {x.name:x for x in Weapon.weapons}
     print('The shopkeeper says "Hello there traveller, and welcome to my humble shop!"\n\n')

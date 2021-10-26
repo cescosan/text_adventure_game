@@ -9,16 +9,16 @@ class Character:
         stats = {"Strength":stats_tup[0],"Speed":stats_tup[1],"Armour":stats_tup[2]}
         return stats
 
-    def __init__(self,name,stats_tup,health = 100,cash = 0,inventory = {"Main Weapon":None,},class_list = characters,funcs = character_stats):        
+    def __init__(self,name,stats_tup,health = 100,inventory = {"Main Weapon":None,},class_list = characters,funcs = character_stats):
         self.name = name
         self.stats = funcs(stats_tup)
         self.health = health
-        self.cash = cash
         self.inventory = inventory
         class_list.append(self)
 
 
-        
+class Player(Character):
+    cash = 100
 
 
 class Weapon:
@@ -55,7 +55,7 @@ stick = Weapon('Stick', 15, 10, 1, 10, 3)
 
 spear = Weapon('Spear', 50, 75, 2, 0, 2)
 
-player=Character(input('Please enter a name: '), (randint(1, 5), randint(1, 5), 0))
+player=Player(input('Please enter a name: '), (randint(1, 5), randint(1, 5), 0))
 
 villain=Character("Mortimus", (6, 3, 9))
 
